@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - Tobacco-Free Product Catalog</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS styles */
+
+    /* Adjust the background color and text color of the header */
+    header {
+      background-color: #212529;
+      color: #fff;
+      padding: 10px;
+    }
+
+    /* Adjust the font size and alignment of the navbar brand */
+    .navbar-brand {
+      font-size: 24px;
+    }
+
+    /* Payment form styles */
+    .payment-form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .payment-form-title {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .payment-form-label {
+      font-weight: bold;
+    }
+
+    .payment-form-input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .payment-form-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #6c757d;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .payment-form-button:hover {
+      background-color: #495057;
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #212529;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #ffc107;
+    }
+
+    .footer-text {
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Tobacco-Free Products</a>
+      <!-- Add any additional navigation links here -->
+    </nav>
+  </header>
+
+  <main>
+    <div class="container mt-4">
+      <div class="payment-form">
+        <h2 class="payment-form-title">Payment</h2>
+        <form action="/payment" method="post" >
+
+        <div class="form-group">
+            <label for="cardNumber" class="payment-form-label" >Card Number</label>
+            <input type="text" class="form-control payment-form-input" id="cardNumber" placeholder="Enter card number">
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <label for="expirationDate" class="payment-form-label">Expiration Date</label>
+              <input type="text" class="form-control payment-form-input" id="expirationDate" placeholder="MM/YY">
+            </div>
+            <div class="col">
+              <label for="cvv" class="payment-form-label">CVV</label>
+              <input type="text" class="form-control payment-form-input" id="cvv" placeholder="CVV">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name" class="payment-form-label">Cardholder Name</label>
+            <input type="text" class="form-control payment-form-input" id="name" placeholder="Cardholder name" name="cardHolderName">
+          </div>
+          <div class="form-group">
+            <label for="email" class="payment-form-label" name="email">Email Address</label>
+            <input type="email" class="form-control payment-form-input" id="email" placeholder="Email address">
+          </div>
+          <div class="form-group">
+            <label for="address" class="payment-form-label" name="address">Billing Address</label>
+            <textarea class="form-control payment-form-input" id="address" rows="3" placeholder="Billing address"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary payment-form-button">Submit Payment</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <p class="footer-text">© 2023 Tobacco-Free Product Catalog. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

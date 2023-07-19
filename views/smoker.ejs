@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tobacco Product Catalog</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS styles */
+
+    /* Adjust the background color and text color of the header */
+    header {
+      background-color: #212529;
+      color: #fff;
+      padding: 10px;
+    }
+
+    /* Adjust the font size and alignment of the navbar brand */
+    .navbar-brand {
+      font-size: 24px;
+    }
+
+    /* Adjust the margin between the product cards */
+    .card {
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+      background-color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Apply a hover effect to the product cards */
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Adjust the width and height of the product images */
+    .card-img-top {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* Adjust the font size and alignment of the product titles */
+    .card-title {
+      font-size: 20px;
+      text-align: center;
+      color: #212529;
+    }
+
+    /* Adjust the font size and alignment of the product descriptions */
+    .card-text {
+      font-size: 16px;
+      text-align: center;
+    }
+
+    /* Add smoky background effect */
+    body {
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.2) 100%);
+      background-size: 100% 100%;
+      background-attachment: fixed;
+    }
+
+    /* Add smoky effect for cards */
+    .smoky-effect {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/images/smoke.jpeg'); /* Replace with your own smoky image */
+      background-repeat: repeat;
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: -1;
+      animation: smoky-animation 20s linear infinite;
+    }
+
+    @keyframes smoky-animation {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 2000px 0; /* Adjust the value to control the speed of the smoky effect */
+      }
+    }
+
+    /* Adjust the color scheme of the subscription plan section */
+    .subscription-section {
+      background-color: #383f51;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subscription-smoky-effect {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/images/smoke.png'); /* Replace with your own smoky image */
+      background-repeat: repeat;
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: -1;
+      animation: smoky-animation 20s linear infinite;
+    }
+
+    .subscription-card {
+      border: none;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .subscription-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .subscription-card-title {
+      font-size: 24px;
+      text-align: center;
+      color: #212529;
+      margin-bottom: 0;
+    }
+
+    .subscription-card-subtitle {
+      font-size: 18px;
+      text-align: center;
+      color: #212529;
+    }
+
+    .subscription-card-price {
+      font-size: 28px;
+      text-align: center;
+      color: #212529;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    .subscription-card-text {
+      font-size: 16px;
+      text-align: center;
+      color: #212529;
+      margin-bottom: 20px;
+    }
+
+    .subscription-card-button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      background-color: #6c757d;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .subscription-card-button:hover {
+      background-color: #495057;
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #212529;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #ffc107;
+    }
+
+    .footer-text {
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Tobacco Products</a>
+      <!-- Add any additional navigation links here -->
+    </nav>
+  </header>
+
+  <main>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <!-- Product 1 -->
+          <div class="card h-100">
+            <div class="smoky-effect"></div>
+            <img src="/images/smokerA.jpeg" class="card-img-top" alt="Product 1">
+            <div class="card-body">
+              <h5 class="card-title">Product 1</h5>
+              <p class="card-text">Product description goes here.</p>
+              <a href="#" class="btn btn-primary">More Info</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <!-- Product 2 -->
+          <div class="card h-100">
+            <div class="smoky-effect"></div>
+            <img src="/images/smokerA.jpeg" class="card-img-top" alt="Product 2">
+            <div class="card-body">
+              <h5 class="card-title">Product 2</h5>
+              <p class="card-text">Product description goes here.</p>
+              <a href="#" class="btn btn-primary">More Info</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <!-- Product 3 -->
+          <div class="card h-100">
+            <div class="smoky-effect"></div>
+            <img src="/images/smokerA.jpeg" class="card-img-top" alt="Product 3">
+            <div class="card-body">
+              <h5 class="card-title">Product 3</h5>
+              <p class="card-text">Product description goes here.</p>
+              <a href="#" class="btn btn-primary">More Info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="subscription-section py-5">
+    <div class="subscription-smoky-effect"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mx-auto text-center">
+          <h2 class="mb-4 text-white">Choose a Subscription Plan</h2>
+          <p class="text-white">Select the subscription plan that suits your needs and enjoy tobacco-free products.</p>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="card subscription-card mb-4">
+            <div class="smoky-effect"></div>
+            <div class="card-body">
+              <h5 class="subscription-card-title">Basic</h5>
+              <p class="subscription-card-subtitle">Get access to a selection of basic tobacco-free products.</p>
+              <h6 class="subscription-card-price">$9.99/month</h6>
+              <p class="subscription-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut efficitur efficitur massa, ac cursus ex ullamcorper non.</p>
+              <a href="\payment" class="subscription-card-button">Choose Plan</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card subscription-card mb-4">
+            <div class="smoky-effect"></div>
+            <div class="card-body">
+              <h5 class="subscription-card-title">Standard</h5>
+              <p class="subscription-card-subtitle">Enjoy a wider range of tobacco-free products with additional features.</p>
+              <h6 class="subscription-card-price">$19.99/month</h6>
+              <p class="subscription-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut efficitur efficitur massa, ac cursus ex ullamcorper non.</p>
+              <a href="\payment" class="subscription-card-button">Choose Plan</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card subscription-card mb-4">
+            <div class="smoky-effect"></div>
+            <div class="card-body">
+              <h5 class="subscription-card-title">Premium</h5>
+              <p class="subscription-card-subtitle">Access to the full catalog of tobacco-free products with exclusive perks.</p>
+              <h6 class="subscription-card-price">$29.99/month</h6>
+              <p class="subscription-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut efficitur efficitur massa, ac cursus ex ullamcorper non.</p>
+              <a href="\payment" class="subscription-card-button">Choose Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <p class="footer-text">© 2023 Tobacco-Free Product Catalog. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
